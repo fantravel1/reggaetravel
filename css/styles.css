@@ -2718,6 +2718,113 @@ blockquote {
   margin-bottom: 0.5rem;
 }
 
+/* ---------- 14c. Food Guides by City ---------- */
+.city-food-guide {
+  margin-bottom: 3rem;
+}
+
+.food-restaurant {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+  transition: all var(--transition-medium);
+}
+
+.food-restaurant:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--green);
+}
+
+.food-restaurant h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.food-restaurant p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.food-restaurant strong {
+  color: var(--text-primary);
+}
+
+.food-tips {
+  margin-top: 1.5rem;
+}
+
+/* ---------- 14d. Extended Itineraries ---------- */
+.itinerary-block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.itinerary-day {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.itinerary-day:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.itinerary-day h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.itinerary-day p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.itinerary-section {
+  margin-bottom: 1rem;
+}
+
+.itinerary-section p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.itinerary-section ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.itinerary-tips h3 {
+  font-size: 1.4rem;
+}
+
+.itinerary-tips ul {
+  margin-bottom: 0;
+}
+
+.itinerary-tips li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
 .route-card {
   background: var(--white);
   border-radius: var(--border-radius-lg);
