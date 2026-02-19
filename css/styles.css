@@ -2825,6 +2825,140 @@ blockquote {
   margin-bottom: 0.5rem;
 }
 
+/* ---------- 15. Safety Guides ---------- */
+.safety-guide {
+  margin-bottom: 3rem;
+}
+
+.safety-section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+}
+
+.safety-section:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-md);
+}
+
+.safety-section h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.75rem 0;
+}
+
+.safety-section p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.safety-section ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.safety-truth {
+  margin-top: 1.5rem;
+}
+
+/* ---------- 16. Seasons & Weather ---------- */
+.season-guide {
+  margin-bottom: 3rem;
+}
+
+.season-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-medium);
+}
+
+.season-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-2px);
+}
+
+.season-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.season-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.season-card strong {
+  color: var(--white);
+}
+
+/* ---------- 17. Reggae Learning Guide ---------- */
+.learning-path {
+  margin-bottom: 2.5rem;
+}
+
+.learning-item {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+}
+
+.learning-item:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-md);
+}
+
+.learning-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.75rem 0;
+}
+
+.learning-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.learning-item ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.learning-tips h3 {
+  font-size: 1.4rem;
+}
+
+.learning-tips ul {
+  margin-bottom: 0;
+}
+
+.learning-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 .route-card {
   background: var(--white);
   border-radius: var(--border-radius-lg);
