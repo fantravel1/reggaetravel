@@ -16,6 +16,7 @@
     initLazyVideos();
     initSmoothScroll();
     initActiveNav();
+    initTabs();
   }
 
   /* ---------- 1. Navigation ---------- */
@@ -214,6 +215,39 @@
         observer.observe(section);
       });
     }
+  }
+
+  /* ---------- 7. Tabs ---------- */
+  function initTabs() {
+    var tabButtons = document.querySelectorAll('.tab-btn');
+    var tabContents = document.querySelectorAll('.tab-content');
+
+    if (!tabButtons.length) return;
+
+    tabButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var tabName = this.getAttribute('data-tab');
+
+        // Remove active from all buttons
+        tabButtons.forEach(function (btn) {
+          btn.classList.remove('active');
+        });
+
+        // Remove active from all contents
+        tabContents.forEach(function (content) {
+          content.classList.remove('active');
+        });
+
+        // Add active to clicked button
+        this.classList.add('active');
+
+        // Add active to corresponding content
+        var content = document.getElementById(tabName);
+        if (content) {
+          content.classList.add('active');
+        }
+      });
+    });
   }
 
 })();

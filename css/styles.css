@@ -803,6 +803,149 @@ blockquote {
   color: var(--text-muted);
 }
 
+/* ---------- Sound System Cards ---------- */
+.sound-system-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  border-top: 4px solid var(--gold);
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.sound-system-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--green-light);
+}
+
+.ss-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.3rem;
+}
+
+.ss-location {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+
+.ss-founded {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
+  font-style: italic;
+}
+
+.sound-system-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.ss-vibe {
+  background: rgba(26, 107, 26, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+/* ---------- Producer Cards ---------- */
+.producer-card {
+  background: linear-gradient(135deg, rgba(13, 59, 13, 0.08) 0%, rgba(212, 160, 23, 0.06) 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  border-left: 4px solid var(--green);
+  transition: all var(--transition-medium);
+}
+
+.producer-card:hover {
+  background: linear-gradient(135deg, rgba(13, 59, 13, 0.12) 0%, rgba(212, 160, 23, 0.1) 100%);
+  border-left-color: var(--gold);
+  transform: translateX(8px);
+}
+
+.producer-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.25rem;
+}
+
+.producer-title {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.producer-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------- Jamaica Location Cards ---------- */
+.location-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-top: 4px solid var(--green);
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--gold);
+}
+
+.location-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.location-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.location-card-header h3 {
+  margin: 0;
+  color: var(--green-deep);
+}
+
+.location-card-body p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.location-card-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- 10. Split Layout ---------- */
 .split {
   display: grid;
@@ -977,6 +1120,176 @@ blockquote {
   color: var(--gold);
 }
 
+/* ---------- Diaspora Cities Guides ---------- */
+.diaspora-cities {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.city-guide {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+}
+
+.city-guide:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.city-header {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.city-header img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.city-guide:hover .city-header img {
+  transform: scale(1.02);
+}
+
+.city-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.3) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.city-header-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem 1.5rem;
+  color: var(--white);
+}
+
+.city-header-content h3 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.city-tagline {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.city-body {
+  padding: 2rem 1.5rem;
+}
+
+.city-info h4 {
+  color: var(--green-deep);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.city-info p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.city-info ul li {
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- Timeline Section ---------- */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  display: grid;
+  gap: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--green) 50%, var(--red) 100%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  background: var(--charcoal);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--gold);
+  transition: all var(--transition-medium);
+}
+
+.timeline-item:hover .timeline-content {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: var(--green-light);
+}
+
+.timeline-year {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: -2px;
+  }
+}
+
 /* ---------- 13. Video Section ---------- */
 .video-grid {
   display: grid;
@@ -1043,6 +1356,395 @@ blockquote {
 
 .section-dark .video-desc {
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- 13. Artist Profiles & Tabs ---------- */
+.tabs-container {
+  margin-top: 2rem;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.tab-btn {
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-short);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  letter-spacing: 0.5px;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn var(--transition-medium);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.artist-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-left: 4px solid var(--gold);
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--green);
+}
+
+.artist-header {
+  margin-bottom: 1rem;
+}
+
+.artist-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.artist-era {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+.artist-bio {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+}
+
+.artist-albums {
+  background: rgba(26, 107, 26, 0.08);
+  padding: 0.875rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.artist-albums strong {
+  color: var(--text-primary);
+}
+
+/* ---------- 13b. Record Shop Cards ---------- */
+.record-shop-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-bottom: 4px solid var(--gold);
+  position: relative;
+}
+
+.record-shop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--green);
+}
+
+.shop-region {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.shop-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.75rem 0;
+}
+
+.shop-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.shop-details {
+  background: rgba(26, 107, 26, 0.05);
+  padding: 0.875rem 1rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--gold);
+}
+
+.shop-details p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.shop-details strong {
+  color: var(--text-primary);
+}
+
+.tips-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.tips-section ul {
+  margin-bottom: 0;
+}
+
+.tips-section li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13c. Spiritual Guide Cards ---------- */
+.spiritual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.spiritual-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: all var(--transition-medium);
+}
+
+.spiritual-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.spiritual-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.spiritual-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.5px;
+}
+
+.spiritual-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.respect-principles h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.respect-principles h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.respect-principles li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .respect-principles {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- 13d. Practical Visitor Guide ---------- */
+.practical-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.practical-section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--gold);
+}
+
+.practical-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--green-deep);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.practical-subsection {
+  margin-bottom: 1.75rem;
+}
+
+.practical-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.practical-subsection h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--green);
+  margin: 0 0 0.75rem 0;
+}
+
+.practical-subsection p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.practical-subsection ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.universal-tips h3 {
+  font-size: 1.4rem;
+}
+
+.universal-tips h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.universal-tips ul {
+  margin: 0;
+  padding: 0;
+}
+
+.universal-tips li {
+  list-style: none;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.universal-tips li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ---------- 13e. Youth Reggae Cards ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.75rem;
+}
+
+.youth-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-top: 4px solid var(--gold);
+  position: relative;
+}
+
+.youth-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: var(--green);
+}
+
+.youth-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.youth-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.youth-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.youth-card p:first-of-type {
+  margin-top: 0;
+}
+
+.youth-card strong {
+  color: var(--text-primary);
+}
+
+.movement-statement p {
+  font-size: 1.05rem;
 }
 
 /* ---------- 14. Pilgrimage Routes ---------- */
@@ -1160,6 +1862,15 @@ blockquote {
   color: var(--gold);
   margin-bottom: 0.5rem;
   display: block;
+}
+
+.festival-when {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--green-light);
+  display: block;
+  margin-bottom: 0.8rem;
+  font-style: italic;
 }
 
 .festival-info p {
