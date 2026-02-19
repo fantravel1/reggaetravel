@@ -2407,6 +2407,159 @@ blockquote {
   font-size: 0.95rem;
 }
 
+/* ---------- 13o. London Neighborhoods ---------- */
+.london-neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
+}
+
+.london-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-bottom: 4px solid var(--gold);
+}
+
+.london-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--green);
+}
+
+.london-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.london-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.25rem 0;
+}
+
+.london-vibe {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.london-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.london-card p:first-of-type {
+  margin-top: 0;
+}
+
+.london-card strong {
+  color: var(--text-primary);
+}
+
+.london-card ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.london-tips h3 {
+  font-size: 1.4rem;
+}
+
+.london-tips ul {
+  margin-bottom: 0;
+}
+
+.london-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13p. Toronto Neighborhoods ---------- */
+.toronto-neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
+}
+
+.toronto-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-medium);
+}
+
+.toronto-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.toronto-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.3);
+}
+
+.toronto-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 0.25rem 0;
+}
+
+.toronto-vibe {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(212, 160, 23, 0.8);
+}
+
+.toronto-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.toronto-card p:first-of-type {
+  margin-top: 0;
+}
+
+.toronto-card strong {
+  color: var(--white);
+}
+
+.toronto-card ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.toronto-tips h3 {
+  font-size: 1.4rem;
+}
+
+.toronto-tips ul {
+  margin-bottom: 0;
+}
+
+.toronto-tips li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
 /* ---------- 14. Pilgrimage Routes ---------- */
 .route-card {
   background: var(--white);
