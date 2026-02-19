@@ -2057,6 +2057,145 @@ blockquote {
   margin-bottom: 0;
 }
 
+/* ---------- 13j. Accommodations Guide ---------- */
+.accommodation-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.accommodation-category {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+}
+
+.accommodation-region {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid rgba(212, 160, 23, 0.5);
+}
+
+.accommodation-type {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accommodation-type:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.acc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--white);
+  margin: 0 0 0.75rem 0;
+}
+
+.accommodation-type p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.accommodation-type p:first-of-type {
+  margin-top: 0;
+}
+
+.accommodation-type strong {
+  color: var(--white);
+}
+
+.accommodation-ethics ul {
+  margin-bottom: 0;
+}
+
+.accommodation-ethics li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13k. LGBTQ+ in Reggae ---------- */
+.lgbtq-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+.lgbtq-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-left: 4px solid var(--gold);
+}
+
+.lgbtq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--green);
+}
+
+.lgbtq-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.lgbtq-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 1rem 0;
+}
+
+.lgbtq-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.lgbtq-card p:first-of-type {
+  margin-top: 0;
+}
+
+.lgbtq-card strong {
+  color: var(--text-primary);
+}
+
+.lgbtq-card ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.lgbtq-resources {
+  color: var(--text-secondary);
+}
+
+.lgbtq-resources h3 {
+  font-size: 1.35rem;
+}
+
+.lgbtq-resources ul {
+  margin-bottom: 0;
+}
+
+.lgbtq-resources li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 /* ---------- 14. Pilgrimage Routes ---------- */
 .route-card {
   background: var(--white);
