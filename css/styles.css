@@ -1747,6 +1747,228 @@ blockquote {
   font-size: 1.05rem;
 }
 
+/* ---------- 13f. Reggae Media Guide ---------- */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.media-section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.media-category-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--green-deep);
+  margin: 0 0 1.75rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.media-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.media-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.media-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.media-header h5 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.media-type,
+.media-author {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.media-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.media-item p:first-of-type {
+  margin-top: 0;
+}
+
+.media-item strong {
+  color: var(--text-primary);
+}
+
+.media-recommendations ol {
+  padding-left: 1.5rem;
+}
+
+.media-recommendations li {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- 13g. Reggae Production Guide ---------- */
+.production-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.production-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-medium);
+}
+
+.production-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.prod-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.prod-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 1rem 0;
+}
+
+.production-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.production-card p:first-of-type {
+  margin-top: 0;
+}
+
+.production-card strong {
+  color: var(--white);
+}
+
+.production-card ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.production-journey {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.production-journey h3 {
+  font-size: 1.35rem;
+}
+
+.production-journey p {
+  margin-bottom: 1rem;
+}
+
+.production-journey strong {
+  color: var(--white);
+}
+
+/* ---------- 13h. Reggae Radio & Streaming ---------- */
+.radio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.radio-category {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.radio-region {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--green-deep);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.radio-station {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.radio-station:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.radio-station h5 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.radio-station p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+.radio-station p:first-of-type {
+  margin-top: 0;
+}
+
+.radio-station strong {
+  color: var(--text-primary);
+}
+
+.radio-tips ul {
+  margin-bottom: 0;
+}
+
+.radio-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 /* ---------- 14. Pilgrimage Routes ---------- */
 .route-card {
   background: var(--white);
