@@ -803,6 +803,90 @@ blockquote {
   color: var(--text-muted);
 }
 
+/* ---------- Producer Cards ---------- */
+.producer-card {
+  background: linear-gradient(135deg, rgba(13, 59, 13, 0.08) 0%, rgba(212, 160, 23, 0.06) 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  border-left: 4px solid var(--green);
+  transition: all var(--transition-medium);
+}
+
+.producer-card:hover {
+  background: linear-gradient(135deg, rgba(13, 59, 13, 0.12) 0%, rgba(212, 160, 23, 0.1) 100%);
+  border-left-color: var(--gold);
+  transform: translateX(8px);
+}
+
+.producer-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.25rem;
+}
+
+.producer-title {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.producer-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------- Jamaica Location Cards ---------- */
+.location-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-top: 4px solid var(--green);
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--gold);
+}
+
+.location-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.location-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.location-card-header h3 {
+  margin: 0;
+  color: var(--green-deep);
+}
+
+.location-card-body p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.location-card-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- 10. Split Layout ---------- */
 .split {
   display: grid;
@@ -975,6 +1059,176 @@ blockquote {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+/* ---------- Diaspora Cities Guides ---------- */
+.diaspora-cities {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.city-guide {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+}
+
+.city-guide:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.city-header {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.city-header img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.city-guide:hover .city-header img {
+  transform: scale(1.02);
+}
+
+.city-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.3) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.city-header-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem 1.5rem;
+  color: var(--white);
+}
+
+.city-header-content h3 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.city-tagline {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.city-body {
+  padding: 2rem 1.5rem;
+}
+
+.city-info h4 {
+  color: var(--green-deep);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.city-info p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.city-info ul li {
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- Timeline Section ---------- */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  display: grid;
+  gap: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--green) 50%, var(--red) 100%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  background: var(--charcoal);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--gold);
+  transition: all var(--transition-medium);
+}
+
+.timeline-item:hover .timeline-content {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: var(--green-light);
+}
+
+.timeline-year {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: -2px;
+  }
 }
 
 /* ---------- 13. Video Section ---------- */
@@ -1160,6 +1414,15 @@ blockquote {
   color: var(--gold);
   margin-bottom: 0.5rem;
   display: block;
+}
+
+.festival-when {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--green-light);
+  display: block;
+  margin-bottom: 0.8rem;
+  font-style: italic;
 }
 
 .festival-info p {
