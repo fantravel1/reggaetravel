@@ -17,6 +17,7 @@
     initSmoothScroll();
     initActiveNav();
     initTabs();
+    initBackToTop();
   }
 
   /* ---------- 1. Navigation ---------- */
@@ -247,6 +248,24 @@
           content.classList.add('active');
         }
       });
+    });
+  }
+
+  /* ---------- 8. Back to Top Button ---------- */
+  function initBackToTop() {
+    var btn = document.querySelector('.back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 600) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 

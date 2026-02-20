@@ -175,9 +175,75 @@
     ]
   }
   </script>
+
+  <!-- Schema.org: BreadcrumbList (AEO Navigation) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://reggaetravel.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kingston Jamaica Guide",
+        "item": "https://reggaetravel.com/#kingston"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "London Reggae Guide",
+        "item": "https://reggaetravel.com/#london-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Toronto Reggae Guide",
+        "item": "https://reggaetravel.com/#toronto-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Reggae Heritage Pilgrimage",
+        "item": "https://reggaetravel.com/#reggae-pilgrimage"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Travel Safety Guide",
+        "item": "https://reggaetravel.com/#safety-guides"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: WebSite (Sitelinks Searchbox) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ReggaeTravel",
+    "url": "https://reggaetravel.com/",
+    "description": "The world's first reggae cultural travel platform. Authentic reggae tourism guides for Kingston, London, and Toronto.",
+    "inLanguage": "en",
+    "about": {
+      "@type": "Thing",
+      "name": "Reggae Music Tourism",
+      "description": "Cultural travel focused on reggae music heritage, Jamaican diaspora communities, and authentic Caribbean experiences"
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#roots-routes" class="skip-link">Skip to main content</a>
+
   <!-- ============ NAVIGATION ============ -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
@@ -189,10 +255,11 @@
         <a href="#roots-routes" role="menuitem">Roots &rarr; Routes</a>
         <a href="#kingston" role="menuitem">Kingston</a>
         <a href="#sound-systems" role="menuitem">Sound Systems</a>
-        <a href="#studios" role="menuitem">Studios</a>
         <a href="#diaspora" role="menuitem">Diaspora</a>
         <a href="#festivals" role="menuitem">Festivals</a>
-        <a href="#respect" role="menuitem">Respect Guide</a>
+        <a href="#reggae-pilgrimage" role="menuitem">Pilgrimage</a>
+        <a href="#safety-guides" role="menuitem">Travel Guide</a>
+        <a href="#respect" role="menuitem">Respect</a>
         <a href="#faq" role="menuitem">FAQ</a>
       </div>
 
@@ -208,7 +275,7 @@
   <div class="mobile-menu-overlay" aria-hidden="true"></div>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
     <a href="#roots-routes">Roots &rarr; Routes</a>
     <a href="#kingston">Kingston</a>
     <a href="#trench-town">Trench Town</a>
@@ -217,10 +284,12 @@
     <a href="#women-in-reggae">Women in Reggae</a>
     <a href="#diaspora">Diaspora</a>
     <a href="#festivals">Festivals</a>
-    <a href="#pilgrimage-routes">Pilgrimage Routes</a>
-    <a href="#liberation">Liberation</a>
+    <a href="#reggae-pilgrimage">Pilgrimage Routes</a>
+    <a href="#london-neighborhoods">London Guide</a>
+    <a href="#toronto-neighborhoods">Toronto Guide</a>
+    <a href="#safety-guides">Safety &amp; Travel</a>
+    <a href="#reggae-learning">Learn Reggae</a>
     <a href="#respect">Respect Guide</a>
-    <a href="#videos">Videos</a>
     <a href="#faq">FAQ</a>
   </div>
 
@@ -347,7 +416,7 @@
           <p>
             ReggaeTravel maps Kingston's music geography block by block — the studios, the sound system lawns, the record shops, the yards where artists lived and recorded. This is not sightseeing. This is pilgrimage.
           </p>
-          <a href="coming-soon.html" class="btn btn-outline-dark">Explore Kingston Guide &rarr;</a>
+          <a href="#kingston-neighborhoods" class="btn btn-outline-dark">Explore Kingston Guide &rarr;</a>
         </div>
       </div>
     </div>
@@ -366,7 +435,7 @@
           <p style="color:rgba(255,255,255,0.8)">
             <strong style="color:var(--gold)">How to visit Trench Town respectfully:</strong> Always go through the official Trench Town Culture Yard, which employs residents as guides. Never explore residential areas alone. Ask before photographing anyone. Spend money locally. Understand that this is a real neighborhood — people live here, raise children here, have daily lives here. You are a guest in someone's home.
           </p>
-          <a href="coming-soon.html" class="btn btn-outline-gold">Trench Town Cultural Map &rarr;</a>
+          <a href="#trench-town" class="btn btn-outline-gold">Trench Town Cultural Map &rarr;</a>
         </div>
         <div class="split-img reveal-right">
           <img src="https://images.unsplash.com/photo-1568702846914-96b305d2ebb1?auto=format&fit=crop&w=800&q=80" alt="Community gathering space in a Caribbean neighborhood with warm light and painted walls" width="800" height="600" loading="lazy">
@@ -391,7 +460,7 @@
           <p>
             A visit to Nine Mile is not just about Bob Marley — it is about understanding the rural Jamaica that fed reggae's soul. The Rastafari elders who guide visitors through the mausoleum offer perspectives on faith, resistance, and identity that no documentary can capture. Come with patience, humility, and a willingness to listen.
           </p>
-          <a href="coming-soon.html" class="btn btn-outline-dark">Nine Mile Pilgrimage Guide &rarr;</a>
+          <a href="#reggae-pilgrimage" class="btn btn-outline-dark">Nine Mile Pilgrimage Guide &rarr;</a>
         </div>
       </div>
     </div>
@@ -652,7 +721,7 @@
       </div>
 
       <div class="text-center reveal" style="margin-top:2.5rem">
-        <a href="coming-soon.html" class="btn btn-outline-dark">Full Studio Pilgrimage Map &rarr;</a>
+        <a href="#reggae-pilgrimage" class="btn btn-outline-dark">Full Studio Pilgrimage Map &rarr;</a>
       </div>
     </div>
   </section>
@@ -1772,7 +1841,7 @@
           </div>
           <div class="route-body">
             <p>The foundational journey. From Nine Mile (Marley's birthplace) through Kingston's studio district, Trench Town's cultural yard, and the sound system lawns of West Kingston. This route traces reggae from its rural spiritual origins to its urban musical explosion.</p>
-            <a href="coming-soon.html" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="#extended-itineraries" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -1787,7 +1856,7 @@
           </div>
           <div class="route-body">
             <p>Follow the speaker stacks across the Atlantic. From Kingston's original sound system lawns to Brixton's Carnival preparations, Toronto's Little Jamaica sessions, and Brooklyn's Caribbean block parties. The route of the bass.</p>
-            <a href="coming-soon.html" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="#extended-itineraries" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -1802,7 +1871,7 @@
           </div>
           <div class="route-body">
             <p>The experimental path. From King Tubby's Waterhouse laboratory to Lee Scratch Perry's Black Ark, through Channel One's mixing desk, and into Berlin's contemporary dub techno scene. How Jamaica invented the remix — and the world never recovered.</p>
-            <a href="coming-soon.html" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="#extended-itineraries" class="card-link">Plan This Route <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1825,7 +1894,7 @@
           <p style="color:rgba(255,255,255,0.8)">
             Marcus Garvey's teachings, the Ethiopian Orthodox faith, Haile Selassie's symbolism, and the lived experience of colonial oppression all flow through reggae's lyrics. To travel to reggae's sacred sites without understanding this is to miss the point entirely.
           </p>
-          <a href="coming-soon.html" class="btn btn-outline-gold">Explore Reggae &amp; Liberation &rarr;</a>
+          <a href="#liberation" class="btn btn-outline-gold">Explore Reggae &amp; Liberation &rarr;</a>
         </div>
         <div class="split-img reveal-right">
           <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=800&q=80" alt="Raised fist street art mural symbolizing resistance and unity" width="800" height="600" loading="lazy">
@@ -2322,7 +2391,7 @@
       </div>
 
       <div class="grid-3 stagger reveal">
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#trench-town" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">Kingston, Jamaica</span>
             <h4 class="card-title">Trench Town</h4>
@@ -2331,7 +2400,7 @@
           </div>
         </a>
 
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#kingston-neighborhoods" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">Kingston, Jamaica</span>
             <h4 class="card-title">Waterhouse</h4>
@@ -2340,7 +2409,7 @@
           </div>
         </a>
 
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#london-neighborhoods" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">London, UK</span>
             <h4 class="card-title">Brixton</h4>
@@ -2349,7 +2418,7 @@
           </div>
         </a>
 
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#toronto-neighborhoods" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">Toronto, Canada</span>
             <h4 class="card-title">Little Jamaica</h4>
@@ -2358,7 +2427,7 @@
           </div>
         </a>
 
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#kingston-neighborhoods" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">Kingston, Jamaica</span>
             <h4 class="card-title">Orange Street</h4>
@@ -2367,7 +2436,7 @@
           </div>
         </a>
 
-        <a href="coming-soon.html" class="card card-dark" style="text-decoration:none">
+        <a href="#diaspora" class="card card-dark" style="text-decoration:none">
           <div class="card-body">
             <span class="card-label">New York, USA</span>
             <h4 class="card-title">Flatbush, Brooklyn</h4>
@@ -2390,7 +2459,7 @@
         </p>
       </div>
 
-      <div class="grid-2 stagger reveal" style="margin-top:2rem">
+      <div class="grid-auto-2 stagger reveal" style="margin-top:2rem">
         <!-- JAMAICA'S YOUTH -->
         <div class="youth-card">
           <div class="youth-icon">🎤</div>
@@ -5127,7 +5196,8 @@
         Join the ReggaeTravel community. New destination guides, cultural deep dives, festival previews, and respect-first travel intelligence — delivered with bass weight.
       </p>
       <form class="cta-form" action="coming-soon.html" method="get">
-        <input type="email" class="cta-input" placeholder="Your email address" aria-label="Email address" required>
+        <label for="newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="newsletter-email" class="cta-input" placeholder="Your email address" aria-label="Email address" required>
         <button type="submit" class="btn btn-primary">Subscribe</button>
       </form>
     </div>
@@ -5158,9 +5228,9 @@
         <ul>
           <li><a href="#pilgrimage-routes">Pilgrimage Routes</a></li>
           <li><a href="#neighborhoods">Neighborhood Guides</a></li>
-          <li><a href="coming-soon.html">Planning Tools</a></li>
-          <li><a href="coming-soon.html">Community Map</a></li>
-          <li><a href="coming-soon.html">Reading List</a></li>
+          <li><a href="#extended-itineraries">Planning Tools</a></li>
+          <li><a href="#london-neighborhoods">City Guides</a></li>
+          <li><a href="#reggae-learning">Learning Resources</a></li>
         </ul>
       </div>
 
@@ -5180,6 +5250,9 @@
       <p>&copy; 2025 ReggaeTravel. Built with respect. All cultural knowledge shared with permission and intention.</p>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

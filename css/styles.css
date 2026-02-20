@@ -1513,6 +1513,11 @@ blockquote {
   color: var(--text-primary);
 }
 
+.tab-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+  color: var(--green);
+}
+
 .tab-btn.active {
   color: var(--green);
   border-bottom-color: var(--green);
@@ -3275,6 +3280,11 @@ blockquote {
 }
 
 .faq-question:hover {
+  color: var(--gold);
+}
+
+.faq-question:focus-visible {
+  box-shadow: var(--focus-ring);
   color: var(--gold);
 }
 
