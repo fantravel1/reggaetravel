@@ -28,7 +28,7 @@
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
   --text-light: #f5f0e1;
-  --text-muted: #8a8578;
+  --text-muted: #6b6560;
   --overlay-dark: rgba(10, 10, 10, 0.7);
   --overlay-medium: rgba(10, 10, 10, 0.5);
   --overlay-light: rgba(10, 10, 10, 0.3);
@@ -51,8 +51,19 @@
 
   /* Transitions */
   --transition-fast: 0.2s ease;
+  --transition-short: 0.2s ease;
   --transition-medium: 0.4s ease;
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Focus & Accessibility */
+  --focus-ring: 0 0 0 3px var(--gold-light);
+  --focus-ring-dark: 0 0 0 3px rgba(244, 196, 48, 0.6);
+  --touch-target-min: 44px;
+
+  /* Semantic Colors */
+  --color-success: #2d8f2d;
+  --color-warning: #d4a017;
+  --color-error: #b22222;
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -100,6 +111,77 @@ a {
 
 a:hover {
   color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Global Focus States (Accessibility) ---------- */
+:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip Link (Accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 10000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+  text-decoration: none;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-medium);
+  z-index: 900;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.back-to-top:focus-visible {
+  box-shadow: var(--focus-ring);
 }
 
 ul, ol {
@@ -290,6 +372,15 @@ blockquote {
   box-shadow: var(--shadow-md);
 }
 
+.btn:focus-visible {
+  box-shadow: var(--focus-ring);
+  transform: translateY(-2px);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
 /* ---------- 5. Navigation ---------- */
 .nav {
   position: fixed;
@@ -348,6 +439,9 @@ blockquote {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
   border-radius: var(--border-radius);
   transition: all var(--transition-fast);
   text-decoration: none;
@@ -358,15 +452,32 @@ blockquote {
 .nav-links a.active {
   color: var(--gold);
   background: rgba(212, 160, 23, 0.1);
+  text-decoration: none;
+}
+
+.nav-links a:focus-visible {
+  box-shadow: var(--focus-ring-dark);
+  color: var(--gold);
 }
 
 .nav-toggle {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   z-index: 1001;
+  border: none;
+  background: none;
+  border-radius: var(--border-radius);
+}
+
+.nav-toggle:focus-visible {
+  box-shadow: var(--focus-ring-dark);
 }
 
 .nav-toggle span {
@@ -432,6 +543,7 @@ blockquote {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 1rem 0;
+  min-height: var(--touch-target-min);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: all var(--transition-fast);
   text-decoration: none;
@@ -440,6 +552,12 @@ blockquote {
 .mobile-menu a:hover {
   color: var(--gold);
   padding-left: 1rem;
+  text-decoration: none;
+}
+
+.mobile-menu a:focus-visible {
+  color: var(--gold);
+  box-shadow: var(--focus-ring-dark);
 }
 
 /* ---------- 6. Hero Section ---------- */
@@ -713,6 +831,11 @@ blockquote {
 .card-link:hover {
   color: var(--gold);
   gap: 0.75rem;
+  text-decoration: none;
+}
+
+.card-link:focus-visible {
+  box-shadow: var(--focus-ring);
 }
 
 .card-link svg {
@@ -1390,6 +1513,11 @@ blockquote {
   color: var(--text-primary);
 }
 
+.tab-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+  color: var(--green);
+}
+
 .tab-btn.active {
   color: var(--green);
   border-bottom-color: var(--green);
@@ -1691,9 +1819,9 @@ blockquote {
 }
 
 /* ---------- 13e. Youth Reggae Cards ---------- */
-.grid-2 {
+.grid-auto-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: 1.75rem;
 }
 
@@ -1747,7 +1875,1218 @@ blockquote {
   font-size: 1.05rem;
 }
 
+/* ---------- 13f. Reggae Media Guide ---------- */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.media-section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.media-category-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--green-deep);
+  margin: 0 0 1.75rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.media-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.media-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.media-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.media-header h5 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.media-type,
+.media-author {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.media-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.media-item p:first-of-type {
+  margin-top: 0;
+}
+
+.media-item strong {
+  color: var(--text-primary);
+}
+
+.media-recommendations ol {
+  padding-left: 1.5rem;
+}
+
+.media-recommendations li {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- 13g. Reggae Production Guide ---------- */
+.production-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: 1.5rem;
+}
+
+.production-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-medium);
+}
+
+.production-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.prod-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.prod-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 1rem 0;
+}
+
+.production-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.production-card p:first-of-type {
+  margin-top: 0;
+}
+
+.production-card strong {
+  color: var(--white);
+}
+
+.production-card ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.production-journey {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.production-journey h3 {
+  font-size: 1.35rem;
+}
+
+.production-journey p {
+  margin-bottom: 1rem;
+}
+
+.production-journey strong {
+  color: var(--white);
+}
+
+/* ---------- 13h. Reggae Radio & Streaming ---------- */
+.radio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.radio-category {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.radio-region {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--green-deep);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.radio-station {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.radio-station:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.radio-station h5 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.radio-station p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+.radio-station p:first-of-type {
+  margin-top: 0;
+}
+
+.radio-station strong {
+  color: var(--text-primary);
+}
+
+.radio-tips ul {
+  margin-bottom: 0;
+}
+
+.radio-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13i. Reggae Food Culture ---------- */
+.food-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+}
+
+.food-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-bottom: 4px solid var(--gold);
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--green);
+}
+
+.food-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.food-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 1rem 0;
+}
+
+.food-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.food-card p:first-of-type {
+  margin-top: 0;
+}
+
+.food-card strong {
+  color: var(--text-primary);
+}
+
+.ital-guide {
+  color: var(--text-secondary);
+}
+
+.ital-guide h3 {
+  font-size: 1.35rem;
+}
+
+.ital-guide h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.ital-guide ul {
+  margin-bottom: 0;
+}
+
+.ital-guide li {
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.food-destinations h3 {
+  font-size: 1.35rem;
+}
+
+.food-destinations h5 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.food-destinations p {
+  margin-bottom: 0;
+}
+
+/* ---------- 13j. Accommodations Guide ---------- */
+.accommodation-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.accommodation-category {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+}
+
+.accommodation-region {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid rgba(212, 160, 23, 0.5);
+}
+
+.accommodation-type {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accommodation-type:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.acc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--white);
+  margin: 0 0 0.75rem 0;
+}
+
+.accommodation-type p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.accommodation-type p:first-of-type {
+  margin-top: 0;
+}
+
+.accommodation-type strong {
+  color: var(--white);
+}
+
+.accommodation-ethics ul {
+  margin-bottom: 0;
+}
+
+.accommodation-ethics li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13k. LGBTQ+ in Reggae ---------- */
+.lgbtq-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.75rem;
+}
+
+.lgbtq-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-left: 4px solid var(--gold);
+}
+
+.lgbtq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--green);
+}
+
+.lgbtq-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.lgbtq-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 1rem 0;
+}
+
+.lgbtq-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.lgbtq-card p:first-of-type {
+  margin-top: 0;
+}
+
+.lgbtq-card strong {
+  color: var(--text-primary);
+}
+
+.lgbtq-card ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.lgbtq-resources {
+  color: var(--text-secondary);
+}
+
+.lgbtq-resources h3 {
+  font-size: 1.35rem;
+}
+
+.lgbtq-resources ul {
+  margin-bottom: 0;
+}
+
+.lgbtq-resources li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13l. Kingston Neighborhoods ---------- */
+.neighborhood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.75rem;
+}
+
+.neighborhood-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-top: 4px solid var(--gold);
+}
+
+.neighborhood-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: var(--green);
+}
+
+.neigh-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.neigh-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.25rem 0;
+}
+
+.neigh-vibe {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.neighborhood-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.neighborhood-card p:first-of-type {
+  margin-top: 0;
+}
+
+.neighborhood-card strong {
+  color: var(--text-primary);
+}
+
+.neighborhood-card ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.kingston-tips h3 {
+  font-size: 1.4rem;
+}
+
+.kingston-tips h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.kingston-tips ul {
+  margin-bottom: 0;
+}
+
+.kingston-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13m. Travel Logistics ---------- */
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.75rem;
+}
+
+.logistics-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-left: 4px solid var(--gold);
+}
+
+.logistics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--green);
+}
+
+.log-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.log-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 1rem 0;
+}
+
+.logistics-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.logistics-card p:first-of-type {
+  margin-top: 0;
+}
+
+.logistics-card strong {
+  color: var(--text-primary);
+}
+
+.logistics-card ul {
+  color: var(--text-secondary);
+}
+
+/* ---------- 13n. Sample Itineraries ---------- */
+.itinerary-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.75rem;
+}
+
+.itinerary-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-medium);
+}
+
+.itinerary-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.itin-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.3);
+}
+
+.itin-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 0.25rem 0;
+}
+
+.itin-type {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.itin-day {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.itin-day:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.itin-day h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 0 0 0.75rem 0;
+}
+
+.itin-day p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.itin-day ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+/* ---------- 13o. London Neighborhoods ---------- */
+.london-neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.75rem;
+}
+
+.london-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border-bottom: 4px solid var(--gold);
+}
+
+.london-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--green);
+}
+
+.london-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.london-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.25rem 0;
+}
+
+.london-vibe {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.london-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.london-card p:first-of-type {
+  margin-top: 0;
+}
+
+.london-card strong {
+  color: var(--text-primary);
+}
+
+.london-card ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.london-tips h3 {
+  font-size: 1.4rem;
+}
+
+.london-tips ul {
+  margin-bottom: 0;
+}
+
+.london-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 13p. Toronto Neighborhoods ---------- */
+.toronto-neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.75rem;
+}
+
+.toronto-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-medium);
+}
+
+.toronto-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-4px);
+}
+
+.toronto-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.3);
+}
+
+.toronto-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 0.25rem 0;
+}
+
+.toronto-vibe {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(212, 160, 23, 0.8);
+}
+
+.toronto-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.toronto-card p:first-of-type {
+  margin-top: 0;
+}
+
+.toronto-card strong {
+  color: var(--white);
+}
+
+.toronto-card ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.toronto-tips h3 {
+  font-size: 1.4rem;
+}
+
+.toronto-tips ul {
+  margin-bottom: 0;
+}
+
+.toronto-tips li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
 /* ---------- 14. Pilgrimage Routes ---------- */
+.pilgrimage-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid var(--gold);
+  transition: all var(--transition-medium);
+}
+
+.pilgrimage-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--green);
+}
+
+.pilgrimage-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 107, 26, 0.1);
+}
+
+.pilgrimage-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.5rem 0;
+}
+
+.pilgrimage-icon {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.pilgrimage-route {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(26, 107, 26, 0.05);
+}
+
+.pilgrimage-route:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pilgrimage-route h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+.pilgrimage-route p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.pilgrimage-route p:first-of-type {
+  margin-top: 0;
+}
+
+.pilgrimage-route strong {
+  color: var(--text-primary);
+}
+
+.pilgrimage-route ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.pilgrimage-note {
+  background: rgba(26, 107, 26, 0.05);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  border-left: 3px solid var(--gold);
+}
+
+.pilgrimage-guide h3 {
+  font-size: 1.4rem;
+}
+
+.pilgrimage-guide ul {
+  margin-bottom: 0;
+}
+
+.pilgrimage-guide li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 14b. Venues & Concert Halls ---------- */
+.venues-section {
+  margin-bottom: 3rem;
+}
+
+.venue-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-medium);
+}
+
+.venue-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-2px);
+}
+
+.venue-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(212, 160, 23, 0.2);
+}
+
+.venue-header h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+}
+
+.venue-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.venue-card p:first-of-type {
+  margin-top: 0;
+}
+
+.venue-card strong {
+  color: var(--white);
+}
+
+.venues-tips h3 {
+  font-size: 1.4rem;
+}
+
+.venues-tips ul {
+  margin-bottom: 0;
+}
+
+.venues-tips li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 14c. Food Guides by City ---------- */
+.city-food-guide {
+  margin-bottom: 3rem;
+}
+
+.food-restaurant {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+  transition: all var(--transition-medium);
+}
+
+.food-restaurant:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--green);
+}
+
+.food-restaurant h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.food-restaurant p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.food-restaurant strong {
+  color: var(--text-primary);
+}
+
+.food-tips {
+  margin-top: 1.5rem;
+}
+
+/* ---------- 14d. Extended Itineraries ---------- */
+.itinerary-block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.itinerary-day {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.itinerary-day:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.itinerary-day h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.itinerary-day p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.itinerary-section {
+  margin-bottom: 1rem;
+}
+
+.itinerary-section p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.itinerary-section ul {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.itinerary-tips h3 {
+  font-size: 1.4rem;
+}
+
+.itinerary-tips ul {
+  margin-bottom: 0;
+}
+
+.itinerary-tips li {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 15. Safety Guides ---------- */
+.safety-guide {
+  margin-bottom: 3rem;
+}
+
+.safety-section {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+}
+
+.safety-section:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-md);
+}
+
+.safety-section h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.75rem 0;
+}
+
+.safety-section p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.safety-section ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.safety-truth {
+  margin-top: 1.5rem;
+}
+
+/* ---------- 16. Seasons & Weather ---------- */
+.season-guide {
+  margin-bottom: 3rem;
+}
+
+.season-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-medium);
+}
+
+.season-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 160, 23, 0.5);
+  transform: translateY(-2px);
+}
+
+.season-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.season-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.season-card strong {
+  color: var(--white);
+}
+
+/* ---------- 17. Reggae Learning Guide ---------- */
+.learning-path {
+  margin-bottom: 2.5rem;
+}
+
+.learning-item {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--gold);
+}
+
+.learning-item:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-md);
+}
+
+.learning-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0 0 0.75rem 0;
+}
+
+.learning-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+
+.learning-item ul {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.learning-tips h3 {
+  font-size: 1.4rem;
+}
+
+.learning-tips ul {
+  margin-bottom: 0;
+}
+
+.learning-tips li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 .route-card {
   background: var(--white);
   border-radius: var(--border-radius-lg);
@@ -1941,6 +3280,11 @@ blockquote {
 }
 
 .faq-question:hover {
+  color: var(--gold);
+}
+
+.faq-question:focus-visible {
+  box-shadow: var(--focus-ring);
   color: var(--gold);
 }
 
